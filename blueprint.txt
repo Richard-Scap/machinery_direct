@@ -1,0 +1,48 @@
+Machinery Direct
+================
+
+Models:
+----------------
+Product
+  has many bids
+  belongs to a user
+  name - string
+  brand - string
+  model - string
+  year - int or string?
+  condition - string
+  price - float or int
+
+User - will build with devise
+  has many bids
+  has many bids
+  has many products
+  name - string
+  email - string
+  address - string
+  address2 - string
+  city - string
+  state - string
+  zip - int or sting?
+  password - string
+  admin - boolean
+
+Bid
+  belongs to a user
+  belongs to a product
+  bid_price - float
+  created_at - time
+  accepted - boolean
+
+Controllers:
+---------------------
+ProductsController
+  need index page
+  need show page
+  need create
+  need destroy
+
+UsersController
+  needs show page
+  needs create
+  needs destroy

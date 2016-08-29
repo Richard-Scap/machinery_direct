@@ -1,0 +1,92 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* pre-defined colors */
+$gray-medium-light: #eaeaea;
+
+/* mixins */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* header */
+#logo {
+  float: left;
+
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+body {
+  padding-top: 60px;
+}
+
+.jumbotron {
+  background-image:url('https://upload.wikimedia.org/wikipedia/commons/0/08/Agricultural_machinery.jpg');
+  height:500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .container {
+    position:relative;
+    top:50px;
+
+    h1 {
+      opacity: .7;
+    }
+  }
+}
+
+
+/* debug */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+
+	a {
+  	color: $gray;
+
+		&:hover {
+  		color: $gray-darker;
+  	}
+  }
+
+	small {
+  	float: left;
+	}
+
+	ul {
+	  float: right;
+	  list-style: none;
+
+		li {
+		  float: left;
+		  margin-left: 15px;
+		}
+	}
+}
