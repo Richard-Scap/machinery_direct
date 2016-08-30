@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<h2>Product: <%= @product.name %></h2>
+<br>
+
+<%= link_to 'Make a bid', new_product_bid_path(@product.id) %> |
+
+<%= link_to 'Edit', edit_product_path(@product.id) %> |
 <%= link_to 'Back', products_path %>
+
+<h5>Bids for <%= @product.name %></h5>
+<ul>
+  <% @product.bids.each do |bid| %>
+    <% if bid.accepted? %>
+      <li style="color:red"> <%= link_to "#{bid.bid_price}", product_bid_path(@product.id, bid.id) %></li>
+    <% else %>
+      <li><%= link_to "#{bid.bid_price}", product_bid_path(@product.id, bid.id) %></li>
+    <% end %>
+  <% end %>
+</ul>

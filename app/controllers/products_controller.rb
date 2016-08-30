@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  def home
+  def bid
+    @bid = Product.find(params[:id]).bids(:id)
   end
 
   # GET /products
@@ -11,6 +12,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
+    @product = Product.find(params[:id])
   end
 
   # GET /products/new
@@ -20,6 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @product = Product.find(params[:id])
   end
 
   # POST /products
@@ -27,7 +30,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
+      redirect_to @product
+      flash[success] = 'Product was successfully created.'
     else
       render :new
     end

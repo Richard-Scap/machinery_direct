@@ -1,0 +1,10 @@
+<%= form_for [@product, @bid] do |f| %>
+  <%= render 'errors'%>
+
+  <%= f.label :bid_price %>
+  <%= f.number_field :bid_price, class: 'form-control' %>
+
+  <div class="actions">
+    <%= f.submit "Submit", class:"btn btn-primary" %>
+  </div>
+<% end %>

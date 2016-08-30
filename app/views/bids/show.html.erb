@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Bid for <%= @product.name %></h3>
+
+<p><%= @bid.bid_price %></p>
+
+<%= button_to 'accept_bid', product_bid_accept_path(@product.id, @bid.id), class:"btn btn-primary" %>

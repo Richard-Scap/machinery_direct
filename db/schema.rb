@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160829184259) do
     t.float    "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "bid_id"
   end
 
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'products#home'
+  root 'static_pages#home'
 
-  resources :products
+  resources :products do
+    resources :bids do
+      post '/accept', to: 'bids#accept_bid'
+    end
+  end
 end
